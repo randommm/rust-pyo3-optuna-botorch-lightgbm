@@ -1,0 +1,21 @@
+[package]
+name = "rust-pyo3-optuna-botorch-lightgbm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lightgbm3 = { git = "https://github.com/randommm/lightgbm3-rs", features = [
+    "polars",
+] }
+polars = { version = "0.35", features = ["lazy"] }
+pyo3 = { version = "0.20" }
+rand = "0.8.5"
+rand_distr = "0.4"
+serde_json = "1.0.108"
+
+[build-dependencies]
+tonic-build = "0.10"
+
+# Enable max optimizations for dependencies, but not for our code:
+[profile.dev.package."*"]
+opt-level = 3

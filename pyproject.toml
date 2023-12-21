@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "rust-pyo3-optuna-botorch-lightgbm"
+version = "0.1.0"
+description = ""
+authors = ["Marco Inacio <m@marcoinacio.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = { version = "*", source = "pytorch-cpu" }
+botorch = "*"
+optuna = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "supplemental"
